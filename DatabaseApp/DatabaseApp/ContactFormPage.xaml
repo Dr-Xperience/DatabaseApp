@@ -37,7 +37,7 @@
       <Entry x:Name="Email" Placeholder="Enter Email ID" Keyboard="Email"/>
       <Entry x:Name="URL" Placeholder="Enter Website" Keyboard="Url"/>
       <Entry x:Name="Age" Placeholder="Enter Age" Keyboard="Numeric"/>
-      <Editor x:Name="Description" Keyboard="Chat"/>
+      <Editor x:Name="Description" Keyboard="Chat" HeightRequest="200"/>
       <Button x:Name="DatabaseInsert" Text="Database Insert" Clicked="DatabaseInsertHandler" />
       <Button x:Name = "ContactAdd"   Text="Add to Contact" />
       <Label x:Name ="Status" Text="Status"/>

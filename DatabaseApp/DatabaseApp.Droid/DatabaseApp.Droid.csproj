@@ -99,10 +99,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ContactDroid.cs" />
-    <Compile Include="DatabaseDroid.cs" />
+    <Compile Include="PlatformAPI.Droid\ContactDroid.cs" />
+    <Compile Include="PlatformAPI.Droid\DatabaseDroid.cs" />
     <Compile Include="MainActivity.cs" />
-    <Compile Include="RegistrarDroid.cs" />
+    <Compile Include="DependencyServices.Droid\RegistrarDroid.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -126,6 +126,7 @@
       <Name>DatabaseApp</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.0.0.6482\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.0.0.6482\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
