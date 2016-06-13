@@ -6,6 +6,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using DependencyServices.Droid;
+using DependencyServices;
 
 namespace DatabaseApp.Droid
 {
@@ -17,6 +19,9 @@ namespace DatabaseApp.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
+
+            ServiceProvider.Instance.Registrar = new RegistrarDroid();
+            ServiceProvider.Instance.Registrar.register();
             LoadApplication(new App());
         }
     }
