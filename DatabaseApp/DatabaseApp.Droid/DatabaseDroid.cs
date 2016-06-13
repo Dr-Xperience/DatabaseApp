@@ -36,7 +36,7 @@ namespace PlatformAPI.Droid
                 Connection.Open();
 
                 string createTable = @"
-                CREATE TABLE IF NOT EXISTS[ContactsTable]{
+                CREATE TABLE IF NOT EXISTS[ContactsTable](
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 Name TEXT,
                 Address TEXT,
@@ -45,7 +45,7 @@ namespace PlatformAPI.Droid
                 URL  TEXT,                  
                 Age TEXT,                      
                 Description TEXT
-                };";
+                );";
 
                 using (var cmd = new SqliteCommand(createTable, Connection))
                 {
@@ -57,22 +57,26 @@ namespace PlatformAPI.Droid
         public int insert(params string[] value)
         {
             string insertString = @"
-                INSERT INTO[ContactsTable]{                
+                INSERT INTO[ContactsTable](                
                 Name, Address, Phone, Email, URL, Age, Description
-                }VALUES {
+                )VALUES (
                 @Name, @Address, @Phone, @Email, @URL, @Age, @Description
-                };";
+                );";
 
-            using (var cmd = new SqliteCommand(insertString, Connection))
+            using (Connection = new SqliteConnection(ConnectionString))
             {
-                cmd.Parameters.AddWithValue("@Name",value[0]);
-                cmd.Parameters.AddWithValue("@Address", value[1]);
-                cmd.Parameters.AddWithValue("@Phone", value[2]);
-                cmd.Parameters.AddWithValue("@Email", value[3]);
-                cmd.Parameters.AddWithValue("@URL", value[4]);
-                cmd.Parameters.AddWithValue("@Age", value[5]);
-                cmd.Parameters.AddWithValue("@Description", value[6]);
-                return cmd.ExecuteNonQuery();
+                Connection.Open();
+                using (var cmd = new SqliteCommand(insertString, Connection))
+                {
+                    cmd.Parameters.AddWithValue("@Name", value[0]);
+                    cmd.Parameters.AddWithValue("@Address", value[1]);
+                    cmd.Parameters.AddWithValue("@Phone", value[2]);
+                    cmd.Parameters.AddWithValue("@Email", value[3]);
+                    cmd.Parameters.AddWithValue("@URL", value[4]);
+                    cmd.Parameters.AddWithValue("@Age", value[5]);
+                    cmd.Parameters.AddWithValue("@Description", value[6]);
+                    return cmd.ExecuteNonQuery();
+                }
             }
         }
     }

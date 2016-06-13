@@ -20,10 +20,10 @@ namespace DatabaseApp
         {
             PlatformAPI.IDatabase vDb=DependencyServices.ServiceProvider.Instance.Registrar.Database;
             int result=vDb.insert(Name.Text, Address.Text, Phone.Text, Email.Text, URL.Text, Age.Text, Description.Text);
-            if (result == 0)
+            if (result >= 1)
             {
-                Status.Text = "Successfull";
-                Status.TextColor = Color.Green
+                Status.Text = "Successfull "+result;
+                Status.TextColor = Color.Green;
             }
             else
             {
