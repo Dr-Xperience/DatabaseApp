@@ -10,6 +10,7 @@ namespace DependencyServices
     {
         public PlatformAPI.IDatabase Database { get; set; }
         public PlatformAPI.IDeviceInfo DeviceInfo { get; set; }
+        public PlatformAPI.IContact Contact { get; set;}
         public abstract void register();
     }
 }

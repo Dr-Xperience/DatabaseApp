@@ -6,12 +6,7 @@ using System.Threading.Tasks;
 
 namespace PlatformAPI
 {
-    public interface IDatabase
+    public interface IContact
     {
-        
-        void init();
-
-        int insert(params string[] value);
-
     }
 }

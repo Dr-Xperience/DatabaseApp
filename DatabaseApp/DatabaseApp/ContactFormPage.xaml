@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DatabaseApp.ContactFormPage">
+  <!--<Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />-->
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness" WinPhone="0,20,0,0"/>
+  </ContentPage.Padding>
+
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Style TargetType="Button">
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+      </Style>
+
+      <Style TargetType="Label">
+        <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+        <Setter Property="BackgroundColor" Value="Yellow"/>
+        <Setter Property="TextColor" Value="Red"/>
+      </Style>
+      <Style TargetType="Entry">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+      </Style>
+
+      <Style TargetType="Editor">
+        <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+      <Setter Property="VerticalOptions" Value="FillAndExpand"/>
+      </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+
+  <ScrollView>
+    <StackLayout>
+      <Entry x:Name="Name" Placeholder="Enter Name" Keyboard="Default"/>
+      <Entry x:Name="Address" Placeholder="Enter Address" Keyboard="Text"/>
+      <Entry x:Name="Phone" Placeholder="Enter Phone Number" Keyboard="Telephone"/>
+      <Entry x:Name="Email" Placeholder="Enter Email ID" Keyboard="Email"/>
+      <Entry x:Name="URL" Placeholder="Enter Website" Keyboard="Url"/>
+      <Entry x:Name="Age" Placeholder="Enter Age" Keyboard="Numeric"/>
+      <Editor x:Name="Description" Keyboard="Chat"/>
+      <Button x:Name="DatabaseInsert" Text="Database Insert" Clicked="DatabaseInsertHandler" />
+      <Button x:Name = "ContactAdd"   Text="Add to Contact" />
+      <Label x:Name ="Status" Text="Status"/>
+    </StackLayout>
+  </ScrollView>
+
+</ContentPage>

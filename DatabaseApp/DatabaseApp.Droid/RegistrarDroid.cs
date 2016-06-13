@@ -18,6 +18,7 @@ namespace DependencyServices.Droid
         public override void register()
         {
             Database = new PlatformAPI.Droid.DatabaseDroid();
+            Contact = new PlatformAPI.Droid.ContactDroid();
         }
     }
 }
